@@ -87,7 +87,7 @@ const TABLE_ROWS = [
 
 export default function SortableTable() {
     return (
-        <Card className="h-full w-full">
+        <Card className="h-full w-full mt-4">
             <CardHeader floated={false} shadow={false} className="rounded-none">
                 <div className="mb-8 flex items-center justify-between gap-8">
                     <div>

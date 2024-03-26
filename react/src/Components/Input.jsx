@@ -2,11 +2,11 @@ import React from "react";
 import { Input, Button } from "@material-tailwind/react";
 
 export default function InputWithButton() {
-    const [email, setEmail] = React.useState("");
+    const [excel, setEmail] = React.useState("");
     const onChange = ({ target }) => setEmail(target.value);
 
     return (
-        <div className="relative flex w-full max-w-[24rem]">
+        <div className="relative flex w-full max-w-[24rem] mt-4">
             <Input
                 type="file"
                 label="Select File"

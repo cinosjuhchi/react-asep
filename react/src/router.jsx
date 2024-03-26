@@ -7,6 +7,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Dashboard />,
     },
+    {
+        path: "/input",
+        element: <App />,
+    },
 ]);
 
 export default router;
