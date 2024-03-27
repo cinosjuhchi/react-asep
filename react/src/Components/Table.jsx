@@ -2,7 +2,7 @@ import {
     MagnifyingGlassIcon,
     ChevronUpDownIcon,
 } from "@heroicons/react/24/outline";
-import { PencilIcon, UserPlusIcon } from "@heroicons/react/24/solid";
+import { PencilIcon } from "@heroicons/react/24/solid";
 import {
     Card,
     CardHeader,
@@ -14,15 +14,30 @@ import {
     IconButton,
     Tooltip,
 } from "@material-tailwind/react";
+import DialogDefault from "./Modalbutton";
 
-const TABLE_HEAD = ["NRP", "Nama", "Pangkat", "Dikum", "Aksi"];
+const TABLE_HEAD = [
+    "NRP",
+    "Nama",
+    "Pangkat",
+    "Dikum",
+    "Dikpol",
+    "Fungsi Polri",
+    "Diklat",
+    "Dikbangpes",
+    "Aksi",
+];
 
 const TABLE_ROWS = [
     {
-        nrp: "123456",
+        nrp: "123456789",
         nama: "John Michael",
         pangkat: "Brada",
         dikum: "S2",
+        dikpol: "Unknown",
+        fungsi: "Unknown",
+        diklat: "Unknown",
+        dikbangpes: "Unknown",
         date: "23/04/18",
     },
 ];
@@ -31,7 +46,7 @@ export default function SortableTable() {
     return (
         <Card className="h-full w-full mt-4">
             <CardHeader floated={false} shadow={false} className="rounded-none">
-                <div className="mb-8 flex items-center justify-between gap-8">
+                <div className="flex items-center justify-between gap-8">
                     <div>
                         <Typography variant="h5" color="blue-gray">
                             Data Kwaldik Korpolairud
@@ -49,10 +64,7 @@ export default function SortableTable() {
                                 }
                             />
                         </div>
-                        <Button className="flex items-center gap-3" size="sm">
-                            <UserPlusIcon strokeWidth={2} className="h-4 w-4" />{" "}
-                            Add member
-                        </Button>
+                        <DialogDefault />
                     </div>
                 </div>
             </CardHeader>
@@ -84,7 +96,19 @@ export default function SortableTable() {
                     </thead>
                     <tbody>
                         {TABLE_ROWS.map(
-                            ({ nrp, nama, pangkat, dikum }, index) => {
+                            (
+                                {
+                                    nrp,
+                                    nama,
+                                    pangkat,
+                                    dikum,
+                                    diklat,
+                                    dikpol,
+                                    dikbangpes,
+                                    fungsi,
+                                },
+                                index
+                            ) => {
                                 const isLast = index === TABLE_ROWS.length - 1;
                                 const classes = isLast
                                     ? "p-4"
@@ -134,6 +158,42 @@ export default function SortableTable() {
                                                 className="font-normal"
                                             >
                                                 {dikum}
+                                            </Typography>
+                                        </td>
+                                        <td className={classes}>
+                                            <Typography
+                                                variant="small"
+                                                color="blue-gray"
+                                                className="font-normal"
+                                            >
+                                                {dikpol}
+                                            </Typography>
+                                        </td>
+                                        <td className={classes}>
+                                            <Typography
+                                                variant="small"
+                                                color="blue-gray"
+                                                className="font-normal"
+                                            >
+                                                {fungsi}
+                                            </Typography>
+                                        </td>
+                                        <td className={classes}>
+                                            <Typography
+                                                variant="small"
+                                                color="blue-gray"
+                                                className="font-normal"
+                                            >
+                                                {diklat}
+                                            </Typography>
+                                        </td>
+                                        <td className={classes}>
+                                            <Typography
+                                                variant="small"
+                                                color="blue-gray"
+                                                className="font-normal"
+                                            >
+                                                {dikbangpes}
                                             </Typography>
                                         </td>
                                         <td className={classes}>
