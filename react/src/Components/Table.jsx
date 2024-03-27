@@ -46,7 +46,7 @@ export default function SortableTable() {
     return (
         <Card className="h-full w-full mt-4">
             <CardHeader floated={false} shadow={false} className="rounded-none">
-                <div className="flex items-center justify-between gap-8">
+                <div className="flex items-center justify-between">
                     <div>
                         <Typography variant="h5" color="blue-gray">
                             Data Kwaldik Korpolairud
@@ -55,7 +55,7 @@ export default function SortableTable() {
                             See information about all members
                         </Typography>
                     </div>
-                    <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
+                    <div className="flex shrink-0 gap-2 flex-row justify-end">
                         <div className="w-full md:w-72">
                             <Input
                                 label="Search"
