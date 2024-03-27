@@ -1,16 +1,16 @@
 import "./output.css";
-import NavbarDark from "./Components/Navbar";
-import InputWithButton from "./Components/Input"
-import SortableTable from "./Components/Table"
+import InputWithButton from "./Components/Input";
+import SortableTable from "./Components/Table";
 
 function App() {
     return (
         <>
-            <InputWithButton />
-            <SortableTable />
+            <div className="container mx-auto">
+                <InputWithButton />
+                <SortableTable />
+            </div>
         </>
-    )
-        
+    );
 }
 
 export default App;
